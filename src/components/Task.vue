@@ -1,5 +1,5 @@
 <template>
-    <div class="list-item">
+    <div class="list-item" :class="task.state">
         <label for="" class="checkbox">
             <input type="checkbox" :checked="isChecked" disabled name="checked" />
             <span class="checkbox-custom" @click="$emit('archive-task', task.id)"></span>
@@ -9,9 +9,9 @@
         </div>
         <div class="actions">
             <a v-if="!isChecked" @click="$emit('pin-task', task.id)">
-                <span class="icon-star"></span>
+                    <span class="icon-star" />
             </a>
-        </div>
+    </div>
     </div>
 
 </template>
@@ -33,6 +33,9 @@ export default {
     computed:{
         isChecked(){
             return this.task.state === 'TASK_ARCHIVED';
+        },
+        isPinned(){
+            return this.task.state === 'TASK_PINNED';
         }
     }
 }

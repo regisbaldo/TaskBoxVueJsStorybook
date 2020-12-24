@@ -10,7 +10,7 @@ export default{
 
 export const actionsData = {
     onPinTask: action('pin-task'),
-    onArchiveTask: action('archive-task')
+    onArchiveTask: action('archive-task'),
 };
 
 const Template = (args, { argTypes }) => ({
