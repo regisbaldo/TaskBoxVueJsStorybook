@@ -1,18 +1,18 @@
-import TaskList from './TaskList';
+import PureTaskList from './PureTaskList';
 import * as TaskStories from './Task.stories';
 
 export default {
-    title: 'TaskList',
-    component: TaskList,
+    title: 'PureTaskList',
+    component: PureTaskList,
     decoratos: [() => '<div style="padding: 3rem;"><story /></div>']
 };
 
 const Template = ( args, {argTypes}) => ({
-    components: {TaskList},
+    components: {PureTaskList},
     props: Object.keys(argTypes),
     // Reusando as actions da Task.stories.js
     methods: TaskStories.actionsData,
-    template: '<TaskList v-bind="$props" @pin-task="onPinTask" @archive-task="onArchiveTask" />',
+    template: '<PureTaskList v-bind="$props" @pin-task="onPinTask" @archive-task="onArchiveTask" />',
 });
 
 export const Default = Template.bind({});
@@ -33,6 +33,7 @@ Default.args = {
 export const WithPinnedTasks = Template.bind({});
 WithPinnedTasks.args = {
     tasks: [
+        { id: '7', title: 'Task 6 (pinned)', state: 'TASK_PINNED' },
         ...Default.args.tasks.slice(0 , 5),
         { id: '6', title: 'Task 6 (pinned)', state: 'TASK_PINNED' },
     ]
