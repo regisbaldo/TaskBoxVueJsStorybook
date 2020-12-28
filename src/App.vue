@@ -1,23 +1,23 @@
 <template>
   <div id="app">
-    <task-list />
+    <InboxScreen />
   </div>
 </template>
 
 <script>
-import TaskList from "./components/TaskList.vue";
-import store from './store';
+import store from "./store";
+import InboxScreen from "./components/InboxScreen.vue";
 export default {
   name: "App",
   store,
   components: {
-    TaskList
-  }
+    InboxScreen,
+  },
 };
 </script>
 
 <style>
-@import './index.css';
+@import "./index.css";
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
