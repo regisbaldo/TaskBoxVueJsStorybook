@@ -1,6 +1,6 @@
 <template>
   <PureTaskList
-    :task="tasks"
+    :tasks="tasks"
     v-on="$listeners"
     @archive-task="archiveTask"
     @pin-task="pinTask"
